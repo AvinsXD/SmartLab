@@ -7,25 +7,29 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 
 public class MainActivity extends AppCompatActivity {
-
+CountDownTimer d;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        new CountDownTimer(5000, 1000) {
+        Intent intent = new Intent(this, Sign.class);
+     d = new  CountDownTimer(5000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
+
 
             }
 
             @Override
             public void onFinish() {
 
-                Intent intent = new Intent(MainActivity, Sign.class);
                 startActivity(intent);
+
             }
 
 
         };
+     d.start();
+
     }
 }

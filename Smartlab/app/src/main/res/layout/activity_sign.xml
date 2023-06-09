@@ -6,4 +6,112 @@
     android:layout_height="match_parent"
     tools:context=".Sign">
 
+    <ImageButton
+
+        android:id="@+id/imageButton"
+        android:layout_width="175dp"
+        android:layout_height="175dp"
+        android:background="#0000"
+        android:contentDescription="amogus"
+
+        android:scaleType="fitXY"
+        android:src="@mipmap/add_shape_transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+android:id="@+id/finishTx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:onClick="onClick"
+        android:text="@string/skip"
+        android:textColor="@color/primary"
+        android:textSize="20sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+
+        android:orientation="vertical"
+
+        app:layout_constraintBottom_toTopOf="@+id/radBeg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton">
+
+        <TextView
+            android:id="@+id/mainTx"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+
+            android:textColor="@color/secondary"
+            android:textSize="25dp" />
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="25dp" />
+
+        <TextView
+            android:id="@+id/smallTx"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:gravity="center"
+            android:textColor="@color/gray"
+            android:textSize="14dp" />
+    </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/radBeg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/rad1"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+
+            />
+
+        <RadioButton
+            android:id="@+id/rad2"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:scaleX="0.8"
+            android:scaleY="0.8" />
+
+        <RadioButton
+            android:id="@+id/rad3"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:scaleX="0.8"
+            android:scaleY="0.8" />
+    </RadioGroup>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="411dp"
+        android:layout_height="311dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

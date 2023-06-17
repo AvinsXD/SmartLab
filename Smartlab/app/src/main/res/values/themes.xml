@@ -14,5 +14,10 @@
         <!-- Customize your theme here. -->
   <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
+
+    </style>
+
+    <style name="ButtonCus" parent="Widget.AppCompat.Button" >
+        <item name="android:textColor">@drawable/text_color</item>
     </style>
 </resources>

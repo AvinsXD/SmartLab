@@ -63,7 +63,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/emailTx"
         android:layout_width="350dp"
         android:layout_height="55dp"
         android:layout_marginStart="-1dp"
@@ -97,7 +97,7 @@ android:hint="example@mail.com"
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText1" />
+        app:layout_constraintTop_toBottomOf="@+id/emailTx" />
 
     <TextView
 

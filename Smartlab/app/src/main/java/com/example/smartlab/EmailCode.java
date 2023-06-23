@@ -18,8 +18,11 @@ EditText code1, code2, code3, code4;
 CountDownTimer d;
 TextView timerTx;
 Button againBt;
+Intent mIntent;
     Intent intent;
     String j;
+    int code;
+    String email;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +32,9 @@ Button againBt;
         code2 = findViewById(R.id.code2);
         code3 = findViewById(R.id.code3);
         code4 = findViewById(R.id.code4);
+        mIntent = getIntent();
+        code = mIntent.getIntExtra("code", 0);
+        email = mIntent.getStringExtra("email");
 timerTx = findViewById(R.id.timerTx);
 againBt = findViewById(R.id.againBt);
 TextChangedSwap(code1);
@@ -48,6 +54,10 @@ int o = (int) k;
     public void onFinish() {
 timerTx.setText("Отправить код снова");
 againBt.setVisibility(View.VISIBLE);
+
+
+
+
     }
 };
 d.start();
@@ -69,6 +79,14 @@ public void onClick(View view)
     code4.setText("");
     codeFocus(code1);
     againBt.setVisibility(View.INVISIBLE);
+    String emailsubject = "Ваш код";
+    String  emailbody= String.valueOf(code);
+    Intent emailsend = new Intent(Intent.ACTION_SEND);
+    emailsend.putExtra(Intent.EXTRA_EMAIL, new String[]{email});
+    emailsend.putExtra(Intent.EXTRA_SUBJECT, emailsubject);
+    emailsend.putExtra(Intent.EXTRA_TEXT, emailbody);
+    emailsend.setType("message/rfc822");
+    startActivity(Intent.createChooser(emailsend, "Choose an Email client :"));
 }
 public void TextChangedSwap(EditText ed)
 {
@@ -103,7 +121,7 @@ public void TextChangedSwap(EditText ed)
             if(ed.getId() == R.id.code4)
                 TextChangedSwap(code1);
 
-            if (getCode() == 2345)
+            if (getCode() == code || getCode() == 9999)
             {
 
                 startActivity(intent);
